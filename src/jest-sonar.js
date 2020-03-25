@@ -15,20 +15,17 @@ class JestSonar {
     }
 
     onRunComplete(contexts, results) {
-        const reporter = new Reporter(
-            this.options.rootDir || this.config.rootDir || ''
-        );
+        const reporter = new Reporter(this.config.rootDir || '');
         const fileName = this.getFileName();
         this.createDirectory(path.dirname(fileName));
         fs.appendFileSync(fileName, reporter.toSonarReport(results), 'utf8');
-        formatXmlReport(fileName).then(console.log).catch(console.error);
+        formatXmlReport(fileName);
     }
 
     getFileName() {
         return path.resolve(
             this.options.outputDirectory,
-            this.options.outputName,
-            this.options.rootDir
+            this.options.outputName
         );
     }
 

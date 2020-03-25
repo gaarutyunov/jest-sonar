@@ -8,7 +8,7 @@ class Reporter {
 
     toSonarReport(results) {
         const testResults = results.testResults.map(testResult => ({
-            path: path.relative(this.rootDir, testResult.testFilePath),
+            path: testResult.testFilePath,
             testCases: testResult.testResults.map(testCase => {
                 return {
                     name: testCase.fullName,
