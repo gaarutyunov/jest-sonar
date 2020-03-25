@@ -1,6 +1,6 @@
 {
 	"name": "@gaarutyunov/jest-sonar",
-	"version": "1.1.3",
+	"version": "1.1.4",
 	"description": "A sonar reporter for jest",
 	"keywords": [
 		"jest",
