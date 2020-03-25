@@ -1,43 +1,45 @@
 {
-  "name": "@gaarutyunov/jest-sonar",
-  "version": "1.0.2",
-  "description": "A sonar reporter for jest",
-  "keywords": [
-    "jest",
-    "sonar",
-    "sonarqube",
-    "test",
-    "report"
-  ],
-  "main": "index.js",
-  "repository": "git@github.com:gaarutyunov/jest-sonar.git",
-  "author": "German Arutyunov <germanarutyunov@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "release": "standard-version",
-    "test": "jest --collect-coverage",
-    "lint": "eslint ."
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
-    "@commitlint/travis-cli": "^8.1.0",
-    "eslint": "^6.2.1",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^3.0.4",
-    "jest": "^24.8.0",
-    "prettier": "^1.18.2",
-    "standard-version": "^6.0.1"
-  },
-  "dependencies": {
-    "entities": "2.0.0",
-    "strip-ansi": "5.2.0"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "yarn lint && yarn test"
-    }
-  }
+	"name": "@gaarutyunov/jest-sonar",
+	"version": "1.0.2",
+	"description": "A sonar reporter for jest",
+	"keywords": [
+		"jest",
+		"sonar",
+		"sonarqube",
+		"test",
+		"report"
+	],
+	"main": "index.js",
+	"repository": "git@github.com:gaarutyunov/jest-sonar.git",
+	"author": "German Arutyunov <germanarutyunov@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"release": "standard-version",
+		"test": "jest --collect-coverage",
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^8.1.0",
+		"@commitlint/config-conventional": "^8.1.0",
+		"@commitlint/travis-cli": "^8.1.0",
+		"eslint": "^6.2.1",
+		"eslint-config-prettier": "^6.0.0",
+		"eslint-plugin-prettier": "^3.1.0",
+		"husky": "^3.0.4",
+		"jest": "^24.8.0",
+		"prettier": "^1.18.2",
+		"standard-version": "^6.0.1"
+	},
+	"dependencies": {
+		"entities": "2.0.0",
+		"strip-ansi": "5.2.0",
+		"readline": "^1.3.0",
+		"fs": "^0.0.1-security"
+	},
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"pre-push": "yarn lint && yarn test"
+		}
+	}
 }

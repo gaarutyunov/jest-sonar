@@ -1,6 +1,7 @@
 const Reporter = require('./reporter');
 const fs = require('fs');
 const path = require('path');
+const formatXmlReport = require('./format-xml-report');
 
 const DEFAULT_OPTIONS = {
     outputDirectory: '',
@@ -14,16 +15,20 @@ class JestSonar {
     }
 
     onRunComplete(contexts, results) {
-        const reporter = new Reporter(this.config.rootDir || '');
+        const reporter = new Reporter(
+            this.config.rootDir || this.options.rootDir || ''
+        );
         const fileName = this.getFileName();
         this.createDirectory(path.dirname(fileName));
         fs.appendFileSync(fileName, reporter.toSonarReport(results), 'utf8');
+        formatXmlReport(fileName);
     }
 
     getFileName() {
         return path.resolve(
             this.options.outputDirectory,
-            this.options.outputName
+            this.options.outputName,
+            this.options.rootDir
         );
     }
 
