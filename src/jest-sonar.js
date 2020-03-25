@@ -17,7 +17,7 @@ class JestSonar {
         const reporter = new Reporter(this.config.rootDir || '');
         const fileName = this.getFileName();
         this.createDirectory(path.dirname(fileName));
-        fs.writeFileSync(fileName, reporter.toSonarReport(results), 'utf8');
+        fs.appendFileSync(fileName, reporter.toSonarReport(results), 'utf8');
     }
 
     getFileName() {
