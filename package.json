@@ -1,6 +1,6 @@
 {
-  "name": "jest-sonar",
-  "version": "0.2.5",
+  "name": "@gaarutyunov/jest-sonar",
+  "version": "0.2.6",
   "description": "A sonar reporter for jest",
   "keywords": [
     "jest",
@@ -10,8 +10,8 @@
     "report"
   ],
   "main": "index.js",
-  "repository": "git@github.com:sh33dafi/jest-sonar.git",
-  "author": "Yannick Houbrix <yannick.houbrix@gmail.com>",
+  "repository": "git@github.com:gaarutyunov/jest-sonar.git",
+  "author": "German Arutyunov <germanarutyunov@gmail.com>",
   "license": "MIT",
   "scripts": {
     "release": "standard-version",
